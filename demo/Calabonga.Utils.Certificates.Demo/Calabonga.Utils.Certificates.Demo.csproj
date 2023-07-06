@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Calabonga.Utils.Certificates\Calabonga.Utils.Certificates.csproj" />
+    <ProjectReference Include="..\..\src\Calabonga.Utils.Certificates\Calabonga.Utils.Certificates.csproj" />
   </ItemGroup>
 
 </Project>

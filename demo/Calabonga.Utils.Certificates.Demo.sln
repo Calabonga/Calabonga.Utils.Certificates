@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Utils.Certificates.Demo", "Calabonga.Utils.Certificates.Demo\Calabonga.Utils.Certificates.Demo.csproj", "{FA7C8D44-AC0B-4C73-B1C7-2823F02F4386}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Utils.Certificates", "..\src\Calabonga.Utils.Certificates\Calabonga.Utils.Certificates.csproj", "{3A5EF11D-7543-4A9B-9BA1-0FE604BEA42C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA7C8D44-AC0B-4C73-B1C7-2823F02F4386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7C8D44-AC0B-4C73-B1C7-2823F02F4386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7C8D44-AC0B-4C73-B1C7-2823F02F4386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7C8D44-AC0B-4C73-B1C7-2823F02F4386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A5EF11D-7543-4A9B-9BA1-0FE604BEA42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A5EF11D-7543-4A9B-9BA1-0FE604BEA42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A5EF11D-7543-4A9B-9BA1-0FE604BEA42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A5EF11D-7543-4A9B-9BA1-0FE604BEA42C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F08460FF-B4EE-4CC5-815F-BD065F1B1813}
+	EndGlobalSection
+EndGlobal

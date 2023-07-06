@@ -2,12 +2,12 @@
 
 public static class Printer
 {
-    private const int _totalWidth = 80;
+    private const int TotalWidth = 80;
 
     public static void PrintTitle(string title)
     {
         Console.WriteLine("");
-        Console.WriteLine("".PadRight(_totalWidth, '-'));
+        Console.WriteLine("".PadRight(TotalWidth, '-'));
         Console.WriteLine(title);
     }
 
@@ -17,15 +17,15 @@ public static class Printer
         {
             foreach (var info in items)
             {
-                Console.WriteLine("".PadRight(_totalWidth, '-'));
+                Console.WriteLine("".PadRight(TotalWidth, '-'));
                 Console.WriteLine(info.ToString());
             }
-            Console.WriteLine("".PadRight(_totalWidth, '-'));
+            Console.WriteLine("".PadRight(TotalWidth, '-'));
             Console.WriteLine($"Totally found items: {items.Count}");
         }
         else
         {
-            Console.WriteLine("".PadRight(_totalWidth, '-'));
+            Console.WriteLine("".PadRight(TotalWidth, '-'));
             Console.WriteLine("Not found.");
         }
     }
