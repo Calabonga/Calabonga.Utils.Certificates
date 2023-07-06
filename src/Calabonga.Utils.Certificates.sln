@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.Utils.Certificates", "Calabonga.Utils.Certificates\Calabonga.Utils.Certificates.csproj", "{BD5BD830-38BE-4CF9-9A15-4D772C90485D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Utils.Certificates", "Calabonga.Utils.Certificates\Calabonga.Utils.Certificates.csproj", "{BD5BD830-38BE-4CF9-9A15-4D772C90485D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.Utils.Certificates.Demo", "Calabonga.Utils.Certificates.Demo\Calabonga.Utils.Certificates.Demo.csproj", "{7A1038D7-51F3-425C-96F8-FDEC662D96C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.Utils.Certificates.Demo", "Calabonga.Utils.Certificates.Demo\Calabonga.Utils.Certificates.Demo.csproj", "{7A1038D7-51F3-425C-96F8-FDEC662D96C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{6DE6AEDE-0A83-40AA-AA82-A3FA6CC08878}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		..\.github\FUNDING.yml = ..\.github\FUNDING.yml
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
