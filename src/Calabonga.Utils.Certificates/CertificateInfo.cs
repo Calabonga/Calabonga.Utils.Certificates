@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Calabonga.Utils.Certificates
 {
@@ -19,6 +20,8 @@ namespace Calabonga.Utils.Certificates
         public DateTime NotBefore { get; set; }
 
         public string? ExpiredDate { get; set; }
+
+        public X509FindType? FindType { get; set; }
 
         public override string ToString() => $"{Name} | {FriendlyName} | {StoreName} | {IssuedTo} | {SerialNumber} | {ExpiredDate}";
     }

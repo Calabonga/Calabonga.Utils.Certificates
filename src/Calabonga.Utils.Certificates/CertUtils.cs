@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Calabonga.Utils.Certificates
@@ -23,6 +24,18 @@ namespace Calabonga.Utils.Certificates
             StoreName.TrustedPublisher,
         };
 
+        public static X509Certificate2? GetCertificate(CertificateInfo certificate)
+        {
+            if (certificate.StoreName == null)
+            {
+                return null;
+            }
+
+            Enum.TryParse(certificate.StoreName!, true, out StoreName store);
+            var collection = FindInStore(GetStore(store), certificate.SerialNumber, certificate.FindType);
+            return collection[0];
+
+        }
 
         public static List<CertificateInfo> GetAllCertificates()
         {
@@ -30,12 +43,11 @@ namespace Calabonga.Utils.Certificates
             foreach (var store in _stores)
             {
                 var collection = FindInStore(GetStore(store), null, null);
-                ProcessCollection(store, collection, result);
+                ProcessCollection(store, collection, result, null);
             }
 
             return result;
         }
-
 
         public static List<CertificateInfo> FindCertificates(string term, X509FindType findType, bool validOnly = false)
         {
@@ -44,13 +56,13 @@ namespace Calabonga.Utils.Certificates
             {
                 var collection = FindInStore(GetStore(store), term, findType, validOnly);
 
-                ProcessCollection(store, collection, result);
+                ProcessCollection(store, collection, result, findType);
             }
 
             return result;
         }
 
-        private static void ProcessCollection(StoreName storeName, X509Certificate2Collection collection, List<CertificateInfo> result)
+        private static void ProcessCollection(StoreName storeName, X509Certificate2Collection collection, List<CertificateInfo> result, X509FindType? x509FindType)
         {
             if (collection.Count <= 0)
             {
@@ -68,7 +80,8 @@ namespace Calabonga.Utils.Certificates
                     SerialNumber = item.GetSerialNumberString(),
                     NotAfter = item.NotAfter,
                     NotBefore = item.NotBefore,
-                    ExpiredDate = item.GetExpirationDateString()
+                    ExpiredDate = item.GetExpirationDateString(),
+                    FindType = x509FindType
                 };
 
                 result.Add(info);
