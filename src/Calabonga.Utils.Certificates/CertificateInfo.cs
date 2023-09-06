@@ -23,6 +23,8 @@ namespace Calabonga.Utils.Certificates
 
         public X509FindType? FindType { get; set; }
 
+        public string? Thumbprint { get; set; }
+
         public override string ToString() => $"{Name} | {FriendlyName} | {StoreName} | {IssuedTo} | {SerialNumber} | {ExpiredDate}";
     }
 }

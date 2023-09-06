@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Calabonga.Utils.Certificates
@@ -32,9 +33,11 @@ namespace Calabonga.Utils.Certificates
             }
 
             Enum.TryParse(certificate.StoreName!, true, out StoreName store);
-            var collection = FindInStore(GetStore(store), certificate.SerialNumber, certificate.FindType);
-            return collection[0];
-
+            var x509Store = GetStore(store);
+            var cert = x509Store.Certificates.OfType<X509Certificate2>()
+                .FirstOrDefault(x => x.Thumbprint == certificate.Thumbprint);
+            x509Store.Close();
+            return cert;
         }
 
         public static List<CertificateInfo> GetAllCertificates()
@@ -81,7 +84,8 @@ namespace Calabonga.Utils.Certificates
                     NotAfter = item.NotAfter,
                     NotBefore = item.NotBefore,
                     ExpiredDate = item.GetExpirationDateString(),
-                    FindType = x509FindType
+                    FindType = x509FindType,
+                    Thumbprint = item.Thumbprint
                 };
 
                 result.Add(info);
